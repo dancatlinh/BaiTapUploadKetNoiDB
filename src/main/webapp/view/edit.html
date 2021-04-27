@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Edit Customer</title>
+</head>
+<body>
+<form action="/edit" method="post" th:object="${editForm}" enctype="multipart/form-data">
+    <input type="text" th:field="*{idEmployee}" hidden>
+    <label>Name</label>
+    <input type="text" th:field="*{nameEmployee}">
+    <label>Date</label>
+    <input type="text" th:field="*{date}">
+
+
+
+    <label>Image</label>
+    <input type="file" th:field="*{avatar}"/>
+
+    <label>gender</label>
+    <select  th:field="*{gender}">
+        <option value="0" > Nam </option>
+        <option value="1" > Nu </option>
+    </select>
+    <button type="submit">Save</button>
+</form>
+</body>
+</html>
